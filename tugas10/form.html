@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        body {
+            text-decoration: none;
+            color: black;
+        }
+        p {
+            color: rgb(41, 207, 7);
+            float: left;
+            margin-left: 1.5em;
+        }
+        .flex {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+
+    <script>
+        function dekor1(){
+            dekor_1= document.getElementById("home");
+            dekor_1.style.color="aqua";
+        }
+
+        function dekor_2(){
+            dekor_2= document.getElementById("home");
+            dekor_2.style.color="black";
+        }
+        function validasi(){
+            let isia_nnama = document.getElementById("nama").value;
+            let p = document.getElementById("nama");
+
+            let isian_email = document.getElementById("email1").value;
+            let p1 = document.getElementById("imel");
+
+            let isianNama = document.getElementById("jam").value;
+            let p2 = document.getElementById("jamm");
+
+            let isian_jam = document.getElementById("tujuan").value;
+            let p3 = document.getElementById("tjn");
+
+            let isian_tiket = document.getElementById("tiket").value;
+            let p4 = document.getElementById("tkt");
+
+            if(isian_nama =="") {
+                p.innerHTML = '<p>' + "Nama tidak valid." + '</p>';
+            }else if(isian_nama.length>30) {
+                p1.innerHTML = '<p>' + "Maksimun 30 karakter." + '</p>';
+            }else {
+                p.innerHTML = '<p></p>';
+            }
+            if(isian_email =="") {
+                p.innerHTML = '<p>' + "Email wajib diisi." + '</p>'
+            }else if(isian_email.length<=9 || isian_email == "@gmail.com") {
+                p1.innerHTML = '<p>' + "Email tidak valid." + '</p>'
+            }else {
+                p1.innerHTML = '<p></p>';
+            }
+            if(isian_jam =="") {
+                p2.innerHTML = '<p>' + "jam keberangkatan wajib diisi." + '</p>'
+            }else {
+                p2.innerHTML = '<p></P>'
+            }
+            if(isian_tujuan =="") {
+                p3.innerHTML = '<p>' + "Tujuan keberangkatan wajib diisi" + '</p>'
+            }else {
+                p3.innerHTML = '<p></p>'
+            }
+            if(isian_tiket ==""||isian_tiket<=0) {
+                p4.innerHTML = '<p>' + "pembelian tiket minimal 1 tiket dan maximum 10 tiket." + '</p>'
+            }else if(isian_tiket>10) {
+                p4.innerHTML = '<p>' + "Maximun 10 tiket." + '</p>'
+            }else {
+                p4.innerHTMLc= '<p></p>'
+            }
+         }     
+    </script>
+</head>
+<body>
+    <a style="text-decoration: none;" href="" id="home"><h1>Welcome to Lidiana validation</h1></a>
+    <hr>
+    <br>
+    <div class="form-group">
+        <label style="float: left;" for="name" class="">Nama Pelanggan</label><p id="nama"></p>
+    </div>
+    <input type="text" class="form-control" placeholder="Nama Pelanggan" id="name">
+    </div>
+    <div class="form-group">
+        <div class="flex">
+        <label style="float: left;" for="email" class="">Email</label><p id="imel"></p>
+    </div>
+    <input tyepe="text" class="form-control" placeholder="Email" id="email1">
+    </div>
+    <div class="form-group">
+        <div class="flex">
+        <label for="jam" class="">Jam keberangkatan</label><p id="jamm"></p>
+    </div>
+    <input type="text" class="form-group" placeholder="Jam Keberangkatan" id="jam">
+    <div class="form-group">
+        <div class="flex">
+            <label for="tujuan" class="">Tujuan Keberangkatan</label><p id="tjn"></p>
+        </div>
+        <input type="text" class="form-control" placeholder="Tujuan Keberangkatan" id="tujuan">
+    </div>
+    <div class="form-group">
+        <div class="flex">
+        <label for="tiket" class="">Jumlah Tiket</label><p id="tkt"></p>
+    </div>
+    <input type="number" class="form-control" placeholder="Jumlah Tiket" id="tiket">
+    </div>
+    <div class="form-group">
+        <div class="flex">
+            <input onclick="validasi"() type="submit" value="Pesan Sekarang" class="btn btn-success">
+        </div>
+    </form>
+    </div>
+</body>
+</html>
